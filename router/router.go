@@ -2,21 +2,26 @@ package router
 
 import (
 	"net/http"
-	"html/template"
+	"github.com/gin-gonic/gin"
 )
 
-func Index(w http.ResponseWriter, r *http.Request){
-	template.Must(template.ParseFiles("Views/Index.html"))
+func Index(c *gin.Context) {
+	// 使用 c.Param(key) 获取 url 参数
+	name := c.Param("name")
+	c.String(http.StatusOK, "index %s", name)
 }
 
-func Register(w http.ResponseWriter, r *http.Request){
-	template.Must(template.ParseFiles("Views/Registe.html"))
+func Register(c *gin.Context) {
+	// 使用 c.Param(key) 获取 url 参数
+	name := c.Param("name")
+	c.String(http.StatusOK, "register %s", name)
 }
 
-func Login(w http.ResponseWriter, r *http.Request){
-	template.Must(template.ParseFiles("Views/Login.html"))
-}
 
-func Logout(w http.ResponseWriter, r *http.Request){
-	template.Must(template.ParseFiles("Views/Logout.html"))
+func Login(c *gin.Context){
+	// 使用 c.Param(key) 获取 url 参数
+	firstname := c.DefaultQuery("firstname", "123")
+	lastname := c.Query("lastname") 
+	// name := c.Param("name")
+	c.String(http.StatusOK, "login , %s %s", firstname, lastname)
 }
