@@ -4,6 +4,7 @@ import (
 	"guestbook_golang/router"
 	"guestbook_golang/middleware"
 	"guestbook_golang/api"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,8 +16,15 @@ func main()  {
 	////////////////////////////////////////////
 	// view
 	////////////////////////////////////////////
+	var a = []int{1,2,3,4,5,6}
 
-	engine.GET("/",router.Index)
+	engine.GET("/", func(c *gin.Context) {
+        c.HTML(http.StatusOK, "Index.html", gin.H{
+			"title": "Main website",
+			"content":"Hello!",
+			"array":a,
+        })
+    })
 
 	v1 := engine.Group("/v1", middleware.Middleware1)
 	{
