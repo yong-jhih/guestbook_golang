@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
 
-    <script src="js/jquery-3.5.1.js"></script>
+    <script src="/static/js/jquery-3.5.1.js"></script>
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="/static/css/bootstrap-reboot.min.css">
@@ -22,8 +22,8 @@
                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="index.php">留言板</a>
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <a class="navbar-brand" href="/">留言板</a>
+            <!-- <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" href="LittleMary.php" tabindex="-1">
                         123
@@ -34,19 +34,54 @@
                         456
                     </a>
                 </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0" method="POST" action="search.php">
+            </ul> -->
+            <!-- <form class="form-inline my-2 my-lg-0" method="POST" action="search.php">
                 <label><input type="radio" value="subject" name="searchType" style='margin:5px' required>主題</label>
                 <label><input type="radio" value="content" name="searchType" style='margin:5px' required>內容</label>
                 <label><input type="radio" value="author" name="searchType" style='margin:5px' required>作者</label>
                 <input style='margin:5px' class="form-control mr-sm-2" type="search" placeholder="Search"
                     aria-label="Search" name="keywords" required>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style='margin-right:5px'>搜尋</button>
-            </form>
+            </form> -->
         </div>
     </nav>
 
-    <h1>HI!</h1>
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">會員登入</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="checkpwd.php">
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">帳號</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="staticEmail" name="memberAC" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">密碼</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword" name="memberPW" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                            <button type="submit" class="btn btn-primary">登入</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
 
 </html>

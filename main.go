@@ -16,8 +16,8 @@ func main() {
 	// view
 	////////////////////////////////////////////
 
-	engine.LoadHTMLGlob("view/*")
-	engine.Static("/static", "./static")
+	engine.LoadHTMLGlob("view/*") // 設定模板路徑
+	engine.Static("/static", "./static") // 設定靜態資源路徑
 	loginStatus := engine.Group("/", middleware.Middleware1)
 	{
 		loginStatus.GET("", router.GetIndex)
