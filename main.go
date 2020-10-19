@@ -17,6 +17,7 @@ func main() {
 	////////////////////////////////////////////
 
 	engine.LoadHTMLGlob("view/*")
+	engine.Static("/static", "./static")
 	loginStatus := engine.Group("/", middleware.Middleware1)
 	{
 		loginStatus.GET("", router.GetIndex)
