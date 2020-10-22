@@ -5,12 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registe</title>
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="/static/js/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-reboot.min.css">
+    <script rel="script" src="/static/js/bootstrap.bundle.js"></script>
 
 </head>
 
 <body>
-    <h1>Registe</h1>
+    <div class="col-md-4 mb-3">
+        <form method="POST" action="/api/add_account">
+            <div class="col-md-9 mb-3">
+                <label for="validationServer01">帳號</label>
+                <input type="text" class="form-control" id="validationServer01" name="memberAC" onblur="checkAC()"
+                    required>
+                <h6 style="visibility: hidden" id="checkAC">.</h6>
+            </div>
+            <div class="col-md-9 mb-3">
+                <label for="validationServer02">密碼</label>
+                <input type="password" class="form-control" id="validationServer02" name="memberPW" onblur="checkPW()"
+                    required>
+                <h6 style="visibility: hidden" id="checkPW">.</h6>
+            </div>
+            <div class="col-md-9 mb-3">
+                <label for="validationServer03">確認密碼</label>
+                <input type="password" class="form-control" id="validationServer03" onblur="reCheckPW()" required>
+                <h6 style="visibility: hidden" id="reCheckPW">.</h6>
+            </div>
+            <div class="col-md-9 mb-3">
+                <label for="validationServer04">暱稱</label>
+                <input type="text" class="form-control" id="validationServer04" name="memberName" onblur="checkName()"
+                    required>
+                <h6 style="visibility: hidden" id="checkName">.</h6>
+            </div>
+            <div class="col-md-9 mb-3">
+                <label for="validationServer05">電子信箱</label>
+                <input type="text" class="form-control" id="validationServer05" name="memberMail" onblur="checkMail()"
+                    required>
+                <h6 style="visibility: hidden" id="checkMail">.</h6>
+            </div>
+            <div style="margin:15px" onmouseover="McheckForm()">
+                <button class="btn btn-primary" type="submit" style="margin-right:10px" id="submitBtn"
+                    disabled>註冊</button>
+                <button class="btn btn-primary" type="reset">清除</button>
+            </div>
+        </form>
+    </div>
+    <hr>
+
+    <script src="/static/js/check.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Form_post(c *gin.Context) {
+func FormPost(c *gin.Context) {
 	// 获取post过来的message内容
 	// 获取的所有参数内容的类型都是 string
 	message := c.PostForm("message")

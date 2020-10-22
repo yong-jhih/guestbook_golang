@@ -32,7 +32,9 @@ func main() {
 	// api
 	////////////////////////////////////////////
 
-	engine.POST("/form_post", api.Form_post)
+	engine.POST("/api/form_post", api.FormPost)
+	engine.POST("/api/check_account", api.CheckAccount)
+	engine.POST("/api/add_account", api.AddAccount)
 
 	engine.Run()
 }
